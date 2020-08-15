@@ -10,7 +10,7 @@ spec:
   ports:
   - port: 4000
     targetPort: 4000
-    nodePort: 30379
+    nodePort: 30399
     protocol: TCP
   selector:
     app: backend
