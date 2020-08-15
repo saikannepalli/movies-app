@@ -1,8 +1,8 @@
 FROM node
-COPY package.json .
+COPY /frontend/package.json .
 RUN  npm install
 
-COPY server.js .
+COPY /backend/server.js .
 
 EXPOSE 4040
 
