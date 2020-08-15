@@ -1,3 +1,5 @@
+currentBuild.displayName="movies-app-#"+currentBuild.number
+
 pipeline {
     agent any
      stages{
@@ -41,4 +43,6 @@ pipeline {
 	         sh " kubectl apply -f database/deployment/database-service.yaml -n samplemovie"
         }
       }
+     }
+}
 }
