@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git credentialsId: 'GIT_CREDENTIALSS', url: 'https://github.com/saikannepalli/moviesapp.git', branch: 'master'
+        git credentialsId: 'GIT_CREDENTIALSS', url: 'https://github.com/saikannepalli/movies-app.git', branch: 'master'
     }
 	
     stage('This stage shows the user'){
@@ -10,10 +10,10 @@ node{
 	}
     
     stage('Build frontend Docker Image'){
-	    sh "sudo docker build -t saikannepalli/frontend:latest ."
+	    sh "sudo docker build -t saikannepalli/frontend:latest frontend1/"
     }
     stage('Build backend Docker image'){
-	    sh "sudo docker build -t saikannepalli/backend:latest ."
+	    sh "sudo docker build -t saikannepalli/backend:latest backend/"
     }
     
     stage('Push Docker Image'){
