@@ -10,10 +10,10 @@ node{
 	}
     
     stage('Build frontend Docker Image'){
-	    sh "sudo docker build -t saikannepalli/frontend1:latest frontend/"
+	    sh "sudo docker build -t saikannepalli/frontend:latest"
     }
     stage('Build backend Docker image'){
-	    sh "sudo docker build -t saikannepalli/backend:latest backend/"
+	    sh "sudo docker build -t saikannepalli/backend:latest"
     }
     
     stage('Push Docker Image'){
