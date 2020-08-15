@@ -22,6 +22,7 @@ pipeline {
         }
 	 
      stage("Deploy To Kuberates Cluster"){
+	     steps{
         withCredentials([file(credentialsId: 'demo-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
          sh "gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}"
          sh "gcloud config set project mssdevops-284216"
@@ -43,6 +44,7 @@ pipeline {
 	         sh " kubectl apply -f database/deployment/database-service.yaml -n samplemovie"
         }
       }
+     }
      }
 }
 
