@@ -44,7 +44,18 @@ pipeline {
 	         sh " kubectl apply -f database/deployment/database-service.yaml -n samplemovie"
         }
       }
+     }	     
      }
-     }
+	post {
+        failure {
+            script {
+                currentBuild.result = 'FAILURE'
+            }
+        }
+
+        always {
+            step([$class: 'Mailer',notifyEveryUnstableBuild: true,recipients: "manibabu.engg@gmail.com", sendToIndividuals: true])
+	}
+	}
 }
 
