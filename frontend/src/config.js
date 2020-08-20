@@ -7,5 +7,5 @@ const getProtocol = () => window.location.protocol;
 //const getBackend = () => getProtocol() + "//" + BACKEND_NAME + getDomain();
 
 export const config = {
-  baseURL: "http://104.154.224.110:30399"
-  };
+  baseURL: "http://mss1k8node2.eastus.cloudapp.azure.com:30399"
+};
